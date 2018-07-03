@@ -65,7 +65,12 @@ public class ATMFramee extends JFrame {
 		
 		JButton btnCard = new JButton("");
 		btnCard.setIcon(new ImageIcon("/Users/apple/eclipse-workspace/ATM/src/gui/card-img.jpeg"));
-		
+		btnCard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				PinM pin = new PinM();
+				pin.setVisible(true);
+			}
 		
 		JLabel lblNewLabel_2 = new JLabel("Account #:");
 		lblNewLabel_2.setForeground(SystemColor.controlHighlight);

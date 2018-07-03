@@ -72,6 +72,8 @@ public class ATMFramee extends JFrame {
 				pin.setVisible(true);
 			}
 		
+		}); 
+		
 		JLabel lblNewLabel_2 = new JLabel("Account #:");
 		lblNewLabel_2.setForeground(SystemColor.controlHighlight);
 		

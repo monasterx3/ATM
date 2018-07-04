@@ -21,6 +21,7 @@ public class PinM extends JFrame {
 
 	private JPanel contentPane;
 	private JPasswordField passwordField;
+	JButton btnProceed2 = new JButton("PROCEED");
 
 	/**
 	 * Launch the application.
@@ -64,7 +65,7 @@ public class PinM extends JFrame {
 		JLabel lblEnterPin = new JLabel("Enter Pin:");
 		lblEnterPin.setForeground(SystemColor.controlHighlight);
 		
-		JButton btnProceed2 = new JButton("PROCEED");
+		
 		btnProceed2.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnProceed2.setForeground(SystemColor.controlHighlight);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -106,5 +107,22 @@ public class PinM extends JFrame {
 					.addGap(137))
 		);
 		contentPane.setLayout(gl_contentPane);
+		actionPinM(); 
+	}
+	public void actionPinM() {
+		btnProceed2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				String pinnum=passwordField.getText(); //get user input
+					if(pinnum.equals("123")) { //Check if pin number entered from user is the same 
+						nextMenu nextMenu=new nextMenu();
+						nextMenu.setVisible(true); //open next window which is nextMenu
+						dispose(); //close this window
+					}else {
+						JOptionPane.showMessageDialog(null, "Invalid Pin");
+						passwordField.setText("");
+						passwordField.requestFocus();
+					}
+			}
+		});
 	}
 }

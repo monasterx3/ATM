@@ -165,6 +165,8 @@ public class nextMenu extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 		actionDeposit();
 		actionCheckBalance();
+		actionTranfer();
+		actionWithdraw();
 	}
 	public void actionDeposit() {
 		btnDeposit.addActionListener(new ActionListener() {

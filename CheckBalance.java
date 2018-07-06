@@ -19,7 +19,8 @@ public class CheckBalance extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-
+	JButton btnNewButton = new JButton("TAKE CARD");
+	JButton btnGoBack = new JButton("GO BACK");
 	/**
 	 * Launch the application.
 	 */
@@ -59,11 +60,10 @@ public class CheckBalance extends JFrame {
 		textField = new JTextField();
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("TAKE CARD");
+		
 		btnNewButton.setForeground(Color.RED);
 		
-		JButton btnNewButton_1 = new JButton("GO BACK");
-		btnNewButton_1.setForeground(Color.RED);
+		btnGoBack.setForeground(Color.RED);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -81,7 +81,7 @@ public class CheckBalance extends JFrame {
 					.addContainerGap(46, Short.MAX_VALUE))
 				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
 					.addContainerGap(236, Short.MAX_VALUE)
-					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+					.addComponent(btnGoBack, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
@@ -103,8 +103,19 @@ public class CheckBalance extends JFrame {
 					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnNewButton)
-						.addComponent(btnNewButton_1)))
+						.addComponent(btnGoBack)))
 		);
 		contentPane.setLayout(gl_contentPane);
+		actionGoBack();
+	}
+	public void actionGoBack() {
+		btnGoBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+					nextMenu nextMenu=new nextMenu();
+					nextMenu.setVisible(true); //open next window which is nextMenu
+					dispose(); //close this window
+			
+			}
+		});
 	}
 }

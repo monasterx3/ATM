@@ -24,7 +24,13 @@ public class nextMenu extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-
+	JButton btnWithdraw = new JButton("WITHDRAW");	
+	JButton btnCheck = new JButton("CHECK BALANCE");
+	JButton btnDeposit = new JButton("DEPOSIT");
+	JButton btnTransfer = new JButton("TRANSFER");
+	JButton btnGoBack = new JButton("GO BACK");
+	JButton btnTakeCard = new JButton("TAKE CARD");
+	
 	/**
 	 * Launch the application.
 	 */
@@ -58,15 +64,15 @@ public class nextMenu extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("ATM 24/7 ALL AROUND THE WORLD");
 		
-		JButton btnWithdraw = new JButton("WITHDRAW");
+		
 		btnWithdraw.setForeground(SystemColor.controlHighlight);
 		btnWithdraw.setFont(new Font("Lucida Grande", Font.BOLD, 14));
 		
-		JButton btnCheck = new JButton("CHECK BALANCE");
+		
 		btnCheck.setForeground(SystemColor.controlHighlight);
 		btnCheck.setFont(new Font("Lucida Grande", Font.BOLD, 14));
 		
-		JButton btnDeposit = new JButton("DEPOSIT");
+		
 		btnDeposit.setBackground(Color.GRAY);
 		btnDeposit.setForeground(SystemColor.controlHighlight);
 		btnDeposit.addActionListener(new ActionListener() {
@@ -75,15 +81,15 @@ public class nextMenu extends JFrame {
 		});
 		btnDeposit.setFont(new Font("Lucida Grande", Font.BOLD, 14));
 		
-		JButton btnTransfer = new JButton("TRANSFER");
+		
 		btnTransfer.setForeground(SystemColor.controlHighlight);
 		btnTransfer.setFont(new Font("Lucida Grande", Font.BOLD, 14));
 		
-		JButton btnGoBack = new JButton("GO BACK");
+		
 		btnGoBack.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnGoBack.setForeground(Color.RED);
 		
-		JButton btnTakeCard = new JButton("TAKE CARD");
+		
 		btnTakeCard.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnTakeCard.setForeground(Color.RED);
 		
@@ -157,5 +163,26 @@ public class nextMenu extends JFrame {
 						.addComponent(btnTakeCard)))
 		);
 		contentPane.setLayout(gl_contentPane);
+		actionDeposit();
+		actionCheckBalance();
+	}
+	public void actionDeposit() {
+		btnDeposit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							Deposit Deposit=new Deposit();
+							Deposit.setVisible(true); //open next window which is nextMenu
+							dispose(); //close this window
+			
+			}
+		});
+	}
+	public void actionCheckBalance() {
+		btnCheck.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							CheckBalance CheckBalance=new CheckBalance();
+							CheckBalance.setVisible(true); //open next window which is nextMenu
+							dispose(); //close this window
+			}
+		});
 	}
 }

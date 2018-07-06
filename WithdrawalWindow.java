@@ -23,7 +23,9 @@ public class WithdrawalWindow extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-
+	JButton btnWithdraw = new JButton("WITHDRAW");	
+	JButton btnNewButton_3 = new JButton("TAKE CARD");
+	JButton btnGoBack = new JButton("GO BACK");
 	/**
 	 * Launch the application.
 	 */
@@ -86,18 +88,18 @@ public class WithdrawalWindow extends JFrame {
 		textField = new JTextField();
 		textField.setColumns(10);
 		
-		JButton btnWithdraw = new JButton("WITHDRAW");
+		
 		btnWithdraw.setForeground(SystemColor.controlHighlight);
 		btnWithdraw.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnNewButton_3 = new JButton("TAKE CARD");
+		
 		btnNewButton_3.setForeground(Color.RED);
 		
-		JButton btnNewButton_6 = new JButton("GO BACK");
-		btnNewButton_6.setForeground(Color.RED);
+		
+		btnGoBack.setForeground(Color.RED);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -137,7 +139,7 @@ public class WithdrawalWindow extends JFrame {
 					.addContainerGap(20, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(200, Short.MAX_VALUE)
-					.addComponent(btnNewButton_6, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)
+					.addComponent(btnGoBack, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(btnNewButton_3)
 					.addContainerGap())
@@ -178,10 +180,21 @@ public class WithdrawalWindow extends JFrame {
 					.addComponent(btnWithdraw)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnNewButton_6)
+						.addComponent(btnGoBack)
 						.addComponent(btnNewButton_3))
 					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
+		actionGoBack();
+	}
+	public void actionGoBack() {
+		btnGoBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+					nextMenu nextMenu=new nextMenu();
+					nextMenu.setVisible(true); 
+					dispose(); 
+			
+			}
+		});
 	}
 }

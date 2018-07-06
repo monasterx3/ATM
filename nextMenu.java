@@ -28,8 +28,7 @@ public class nextMenu extends JFrame {
 	JButton btnCheck = new JButton("CHECK BALANCE");
 	JButton btnDeposit = new JButton("DEPOSIT");
 	JButton btnTransfer = new JButton("TRANSFER");
-	JButton btnGoBack = new JButton("GO BACK");
-	JButton btnTakeCard = new JButton("TAKE CARD");
+	JButton btnTakeCard = new JButton("CANCEL");
 	
 	/**
 	 * Launch the application.
@@ -86,10 +85,6 @@ public class nextMenu extends JFrame {
 		btnTransfer.setFont(new Font("Lucida Grande", Font.BOLD, 14));
 		
 		
-		btnGoBack.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		btnGoBack.setForeground(Color.RED);
-		
-		
 		btnTakeCard.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnTakeCard.setForeground(Color.RED);
 		
@@ -132,7 +127,6 @@ public class nextMenu extends JFrame {
 					.addGap(31))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(206, Short.MAX_VALUE)
-					.addComponent(btnGoBack, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnTakeCard, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
 					.addGap(20))
@@ -159,7 +153,6 @@ public class nextMenu extends JFrame {
 						.addComponent(rdbtnChecking))
 					.addPreferredGap(ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnGoBack)
 						.addComponent(btnTakeCard)))
 		);
 		contentPane.setLayout(gl_contentPane);
@@ -167,6 +160,7 @@ public class nextMenu extends JFrame {
 		actionCheckBalance();
 		actionTranfer();
 		actionWithdraw();
+		actionCancel();
 	}
 	public void actionDeposit() {
 		btnDeposit.addActionListener(new ActionListener() {
@@ -202,6 +196,14 @@ public class nextMenu extends JFrame {
 							WithdrawalWindow WithdrawalWindow=new WithdrawalWindow();
 							WithdrawalWindow.setVisible(true); 
 							dispose(); //close this window
+			}
+		});
+	}
+	public void actionCancel() {
+		btnTakeCard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							JOptionPane.showMessageDialog(null, "Account Activity Canceled. Thank you for banking with us!" );
+							dispose(); 
 			}
 		});
 	}

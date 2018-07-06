@@ -22,6 +22,9 @@ public class Deposit extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	JButton btnNewButton = new JButton("PROCEED");
+	JButton btnNewButton_1 = new JButton("TAKE CARD");
+	JButton btnNewButton_2 = new JButton("GO BACK");
 
 	/**
 	 * Launch the application.
@@ -72,13 +75,13 @@ public class Deposit extends JFrame {
 		textField = new JTextField();
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("PROCEED");
+		
 		btnNewButton.setForeground(SystemColor.controlHighlight);
 		
-		JButton btnNewButton_1 = new JButton("TAKE CARD");
+		
 		btnNewButton_1.setForeground(Color.RED);
 		
-		JButton btnNewButton_2 = new JButton("GO BACK");
+		
 		btnNewButton_2.setForeground(Color.RED);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -138,5 +141,16 @@ public class Deposit extends JFrame {
 					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
+		actionGoBack();
+	}
+	public void actionGoBack() {
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+					nextMenu nextMenu=new nextMenu();
+					nextMenu.setVisible(true); //open next window which is nextMenu
+					dispose(); //close this window
+			
+			}
+		});
 	}
 }

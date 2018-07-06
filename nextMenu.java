@@ -185,4 +185,22 @@ public class nextMenu extends JFrame {
 			}
 		});
 	}
+	public void actionTransfer() {
+		btnTransfer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							Transfer Transfer=new Transfer();
+							Transfer.setVisible(true); 
+							dispose(); //close this window
+			}
+		});
+	}
+	public void actionWithdraw() {
+		btnWithdraw.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							WithdrawalWindow WithdrawalWindow=new WithdrawalWindow();
+							WithdrawalWindow.setVisible(true); 
+							dispose(); //close this window
+			}
+		});
+	}
 }

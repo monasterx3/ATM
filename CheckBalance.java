@@ -19,7 +19,7 @@ public class CheckBalance extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	JButton btnNewButton = new JButton("TAKE CARD");
+	JButton btnNewButton = new JButton("EXIT");
 	JButton btnGoBack = new JButton("GO BACK");
 	/**
 	 * Launch the application.
@@ -107,6 +107,7 @@ public class CheckBalance extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 		actionGoBack();
+		actionExit();
 	}
 	public void actionGoBack() {
 		btnGoBack.addActionListener(new ActionListener() {
@@ -118,4 +119,12 @@ public class CheckBalance extends JFrame {
 			}
 		});
 	}
+	public void actionExit() {
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							JOptionPane.showMessageDialog(null, "You're now signed out. Thank you for banking with us!" );
+							dispose(); 
+						}
+				});
+		}
 }

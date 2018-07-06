@@ -25,6 +25,9 @@ public class Transfer extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	JButton btnNewButton = new JButton("TAKE CARD");
+	JButton btnGoBack = new JButton("GO BACK");
+	JButton btnNewButton_2 = new JButton("TRANSFER");
 
 	/**
 	 * Launch the application.
@@ -53,17 +56,17 @@ public class Transfer extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JButton btnNewButton = new JButton("TAKE CARD");
+		
 		btnNewButton.setForeground(Color.RED);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("GO BACK");
-		btnNewButton_1.setForeground(Color.RED);
 		
-		JButton btnNewButton_2 = new JButton("TRANSFER");
+		btnGoBack.setForeground(Color.RED);
+		
+		
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -110,7 +113,7 @@ public class Transfer extends JFrame {
 							.addGap(155))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(btnNewButton_1)
+								.addComponent(btnGoBack)
 								.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 257, GroupLayout.PREFERRED_SIZE))
 							.addContainerGap())))
 				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
@@ -142,8 +145,19 @@ public class Transfer extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnNewButton)
-						.addComponent(btnNewButton_1)))
+						.addComponent(btnGoBack)))
 		);
 		contentPane.setLayout(gl_contentPane);
+		actionGoBack();
+	}
+	public void actionGoBack() {
+		btnGoBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+					nextMenu nextMenu=new nextMenu();
+					nextMenu.setVisible(true); 
+					dispose(); 
+			
+			}
+		});
 	}
 }

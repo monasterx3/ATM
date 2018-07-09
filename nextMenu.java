@@ -19,16 +19,16 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 
 public class nextMenu extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
 	JButton btnWithdraw = new JButton("WITHDRAW");	
 	JButton btnCheck = new JButton("CHECK BALANCE");
 	JButton btnDeposit = new JButton("DEPOSIT");
-	JButton btnTransfer = new JButton("TRANSFER");
-	JButton btnTakeCard = new JButton("CANCEL");
+	JButton btnGoBack = new JButton("GO BACK");
+	JButton btnTakeCard = new JButton("TAKE CARD");
 	
 	/**
 	 * Launch the application.
@@ -81,55 +81,43 @@ public class nextMenu extends JFrame {
 		btnDeposit.setFont(new Font("Lucida Grande", Font.BOLD, 14));
 		
 		
-		btnTransfer.setForeground(SystemColor.controlHighlight);
-		btnTransfer.setFont(new Font("Lucida Grande", Font.BOLD, 14));
+		btnGoBack.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		btnGoBack.setForeground(Color.RED);
 		
 		
 		btnTakeCard.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnTakeCard.setForeground(Color.RED);
 		
-		textField = new JTextField();
-		textField.setBackground(SystemColor.window);
-		textField.setColumns(10);
-		
-		JRadioButton rdbtnChecking = new JRadioButton("Checking");
-		
-		JRadioButton rdbtnSavings = new JRadioButton("Savings");
+		JTextArea textArea = new JTextArea();
+		textArea.setBackground(Color.LIGHT_GRAY);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(39)
-					.addComponent(lblNewLabel_1)
-					.addContainerGap(48, Short.MAX_VALUE))
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-							.addGap(27)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-									.addComponent(btnTransfer, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(btnDeposit, GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
-								.addComponent(rdbtnChecking))
-							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnCheck, GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-								.addComponent(btnWithdraw, GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(6)
-									.addComponent(rdbtnSavings))))
-						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-							.addGap(103)
-							.addComponent(lblNewLabel_2))
-						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-							.addGap(21)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, 386, GroupLayout.PREFERRED_SIZE)))
-					.addGap(31))
-				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(206, Short.MAX_VALUE)
+					.addComponent(btnGoBack, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnTakeCard, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
 					.addGap(20))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(132)
+					.addComponent(btnCheck, GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+					.addGap(124))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(39)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(6)
+							.addComponent(btnDeposit, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnWithdraw, GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
+						.addComponent(textArea, GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+						.addComponent(lblNewLabel_1))
+					.addGap(36))
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addGap(96)
+					.addComponent(lblNewLabel_2)
+					.addContainerGap(113, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -137,30 +125,22 @@ public class nextMenu extends JFrame {
 					.addComponent(lblNewLabel_1)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_2)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textField, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnDeposit)
-						.addComponent(btnWithdraw))
+						.addComponent(btnWithdraw)
+						.addComponent(btnDeposit))
 					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnCheck)
+					.addPreferredGap(ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnTransfer)
-						.addComponent(btnCheck))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(rdbtnSavings)
-						.addComponent(rdbtnChecking))
-					.addPreferredGap(ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnGoBack)
 						.addComponent(btnTakeCard)))
 		);
 		contentPane.setLayout(gl_contentPane);
 		actionDeposit();
 		actionCheckBalance();
-		actionTranfer();
-		actionWithdraw();
-		actionCancel();
 	}
 	public void actionDeposit() {
 		btnDeposit.addActionListener(new ActionListener() {
@@ -180,15 +160,7 @@ public class nextMenu extends JFrame {
 							dispose(); //close this window
 			}
 		});
-	}
-	public void actionTransfer() {
-		btnTransfer.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-							Transfer Transfer=new Transfer();
-							Transfer.setVisible(true); 
-							dispose(); //close this window
-			}
-		});
+	
 	}
 	public void actionWithdraw() {
 		btnWithdraw.addActionListener(new ActionListener() {
@@ -196,14 +168,6 @@ public class nextMenu extends JFrame {
 							WithdrawalWindow WithdrawalWindow=new WithdrawalWindow();
 							WithdrawalWindow.setVisible(true); 
 							dispose(); //close this window
-			}
-		});
-	}
-	public void actionCancel() {
-		btnTakeCard.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-							JOptionPane.showMessageDialog(null, "Account Activity Canceled. Thank you for banking with us!" );
-							dispose(); 
 			}
 		});
 	}

@@ -85,6 +85,13 @@ public class ATMFramee extends JFrame {
 		
 		btnProceed.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnProceed.setForeground(SystemColor.controlHighlight);
+		
+		JLabel lblNewLabel_4 = new JLabel("Create a New Account Now");
+		lblNewLabel_4.setForeground(SystemColor.controlHighlight);
+		
+		JButton btnNewAccount = new JButton("NEW ACCOUNT");
+		btnNewAccount.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		btnNewAccount.setForeground(SystemColor.controlHighlight);
 	
 	
 		
@@ -100,23 +107,27 @@ public class ATMFramee extends JFrame {
 							.addGap(92)
 							.addComponent(lblNewLabel_1))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(27)
-							.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
-							.addGap(12)
-							.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, 212, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnProceed)
-							.addGap(144))
-						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(37)
 							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 396, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(66)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(btnCard, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(26)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(6)
-									.addComponent(btnCard, GroupLayout.PREFERRED_SIZE, 304, GroupLayout.PREFERRED_SIZE))
-								.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE))))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, 212, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(btnProceed))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblNewLabel_4)
+									.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(btnNewAccount, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)))))
 					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
@@ -128,15 +139,22 @@ public class ATMFramee extends JFrame {
 					.addComponent(lblNewLabel_1)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_3)
-					.addGap(12)
-					.addComponent(btnCard)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_2)
-						.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnProceed))
-					.addGap(124)
-					.addComponent(label)
+					.addComponent(btnCard, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnProceed)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+							.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(lblNewLabel_2)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(168)
+							.addComponent(label))
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+							.addComponent(lblNewLabel_4)
+							.addComponent(btnNewAccount)))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
@@ -160,3 +178,4 @@ public class ATMFramee extends JFrame {
 	}
 	
 }
+

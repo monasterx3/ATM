@@ -23,6 +23,7 @@ public class ATMFramee extends JFrame {
 
 	private JPanel contentPane;
 	private JPasswordField passwordField;
+	JButton btnProceed = new JButton("PROCEED");
 
 	/**
 	 * Launch the application.
@@ -38,7 +39,7 @@ public class ATMFramee extends JFrame {
 				}
 			}
 		});
-		
+		new ATMFramee();
 	}
 
 	/**
@@ -73,7 +74,7 @@ public class ATMFramee extends JFrame {
 		
 		passwordField = new JPasswordField();
 		
-		JButton btnProceed = new JButton("PROCEED");
+		
 		btnProceed.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnProceed.setForeground(SystemColor.controlHighlight);
 	
@@ -131,5 +132,21 @@ public class ATMFramee extends JFrame {
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+		actionATMFramee();
 	}
+	public void actionATMFramee() {
+		btnProceed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				String acctnum=passwordField.getText(); //get user input
+						if(acctnum.equals("123")) { //Check if account number entered from user is the same 
+							PinM PinM=new PinM();
+							PinM.setVisible(true); //open next window which is pinM
+							dispose(); //close this window
+						}else {
+							JOptionPane.showMessageDialog(null, "Invalid Account Number");
+							passwordField.setText("");
+							passwordField.requestFocus();
+						}
+			}
+		});
 }

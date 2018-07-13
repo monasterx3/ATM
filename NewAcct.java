@@ -28,6 +28,12 @@ public class NewAcct extends JFrame {
 	private JTextField email_textField;
 	private JTextField textField_4;
 
+	
+	JButton btnCreateAcct = new JButton("CREATE ACCOUNT");	
+	JCheckBox chckbxChecking = new JCheckBox("CHECKING");
+	JCheckBox chckbxSavings = new JCheckBox("SAVINGS");
+	JButton btnGoBack = new JButton("GO BACK");
+	
 	/**
 	 * Launch the application.
 	 */
@@ -91,14 +97,10 @@ public class NewAcct extends JFrame {
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 		
-		JButton btnCreateAcct = new JButton("CREATE ACCOUNT");
+		
 		btnCreateAcct.setForeground(SystemColor.controlHighlight);
 		
-		JCheckBox chckbxChecking = new JCheckBox("CHECKING");
 		
-		JCheckBox chckbxSavings = new JCheckBox("SAVINGS");
-		
-		JButton btnGoBack = new JButton("GO BACK");
 		btnGoBack.setForeground(Color.RED);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -185,5 +187,17 @@ public class NewAcct extends JFrame {
 					.addGap(3))
 		);
 		contentPane.setLayout(gl_contentPane);
+		actionGoBack();
+	}
+	public void actionGoBack() {
+		btnGoBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							ATMFramee ATMFramee=new ATMFramee();
+							ATMFramee.setVisible(true); //open next window which is ATMFramee.java
+							JOptionPane.showMessageDialog(null, "Account Activity Canceled" );
+							dispose(); //close this window
+			
+			}
+		});
 	}
 }

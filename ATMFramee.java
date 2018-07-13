@@ -26,6 +26,7 @@ public class ATMFramee extends JFrame {
 	private JPanel contentPane;
 	private JPasswordField passwordField;
 	JButton btnProceed = new JButton("PROCEED"); 
+	JButton btnNewAccount = new JButton("NEW ACCOUNT");
 	/**
 	 * Launch the application.
 	 */
@@ -89,7 +90,7 @@ public class ATMFramee extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("Create a New Account Now");
 		lblNewLabel_4.setForeground(SystemColor.controlHighlight);
 		
-		JButton btnNewAccount = new JButton("NEW ACCOUNT");
+		
 		btnNewAccount.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		btnNewAccount.setForeground(SystemColor.controlHighlight);
 	
@@ -159,6 +160,7 @@ public class ATMFramee extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 		actionATMFramee(); //call method
+		actionCreateAcct();
 	}
 	public void actionATMFramee() {
 		btnProceed.addActionListener(new ActionListener() {
@@ -173,6 +175,15 @@ public class ATMFramee extends JFrame {
 						passwordField.setText("");
 						passwordField.requestFocus();
 					}
+			}
+		});
+	}
+	public void actionCreateAcct(){
+		btnNewAccount.addActionListener( new ActionListener(){
+			public void actionPerformed(ActionEvent ae){
+				NewAcct NewAcct=new NewAcct();
+				NewAcct.setVisible(true);
+				dispose();
 			}
 		});
 	}

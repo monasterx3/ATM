@@ -25,7 +25,7 @@ public class Deposit extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	JButton btnNewButton = new JButton("PROCEED");
-	JButton btnNewButton_1 = new JButton("TAKE CARD");
+	JButton btnNewButton_1 = new JButton("CANCEL");
 	JButton btnNewButton_2 = new JButton("GO BACK");
 
 	/**
@@ -144,8 +144,9 @@ public class Deposit extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 		actionGoBack();
+		actionExit();
 	}
-	public void actionGoBack() {
+	public void actionGoBack() { //this will go back to previous page
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 					nextMenu nextMenu=new nextMenu();
@@ -155,4 +156,12 @@ public class Deposit extends JFrame {
 			}
 		});
 	}
+	public void actionExit() { //this will close the window
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							JOptionPane.showMessageDialog(null, "Account Activity Canceled. Thank you for banking with us!" );
+							dispose(); 
+						}
+				});
+		}
 }

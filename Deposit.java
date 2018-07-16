@@ -25,7 +25,7 @@ public class Deposit extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	JButton btnNewButton = new JButton("PROCEED");
-	JButton btnNewButton_1 = new JButton("CANCEL");
+	JButton btnNewButton_1 = new JButton("TAKE CARD");
 	JButton btnNewButton_2 = new JButton("GO BACK");
 
 	/**
@@ -62,7 +62,7 @@ public class Deposit extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("ATM 24/7 ALL AROUND THE WORLD");
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("/Users/apple/eclipse-workspace/ATM/src/gui/stack-of-money.png"));
+		lblNewLabel_2.setIcon(new ImageIcon("/home/alejandro/Desktop/ATM/src/gui/stack-of-money.png"));
 		
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon("/Users/apple/eclipse-workspace/ATM/src/gui/check.png"));
@@ -144,9 +144,8 @@ public class Deposit extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 		actionGoBack();
-		actionExit();
 	}
-	public void actionGoBack() { //this will go back to previous page
+	public void actionGoBack() {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 					nextMenu nextMenu=new nextMenu();
@@ -156,12 +155,12 @@ public class Deposit extends JFrame {
 			}
 		});
 	}
-	public void actionExit() { //this will close the window
+	public void actionTakeCard() {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
-							JOptionPane.showMessageDialog(null, "Account Activity Canceled. Thank you for banking with us!" );
-							dispose(); 
-						}
-				});
-		}
+				System.exit(0);
+			
+			}
+		});
+	}
 }

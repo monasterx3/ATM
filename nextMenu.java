@@ -29,7 +29,7 @@ public class nextMenu extends JFrame {
 	JButton btnCheck = new JButton("CHECK BALANCE");
 	JButton btnDeposit = new JButton("DEPOSIT");
 	//JButton btnGoBack = new JButton("GO BACK"); I dont think this button is needed  
-	JButton btnTakeCard = new JButton("CANCEL");
+	JButton btnTakeCard = new JButton("EXIT");
 	
 	/**
 	 * Launch the application.
@@ -143,7 +143,7 @@ public class nextMenu extends JFrame {
 		actionDeposit();
 		actionCheckBalance();
 		actionWithdraw();
-		actionCancel();
+		actionExit();
 	}
 	public void actionDeposit() {
 		btnDeposit.addActionListener(new ActionListener() {
@@ -175,7 +175,7 @@ public class nextMenu extends JFrame {
 			}
 		});
 	}
-	public void actionCancel() {
+	public void actionExit() {
 		btnTakeCard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 							JOptionPane.showMessageDialog(null, "Account Activity Canceled. Thank you for banking with us!" );

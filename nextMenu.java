@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -81,8 +82,8 @@ public class nextMenu extends JFrame {
 		btnDeposit.setFont(new Font("Lucida Grande", Font.BOLD, 14));
 		
 		
-		btnGoBack.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		btnGoBack.setForeground(Color.RED);
+		//btnGoBack.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+		//btnGoBack.setForeground(Color.RED);
 		
 		
 		btnTakeCard.setFont(new Font("Lucida Grande", Font.BOLD, 13));
@@ -95,7 +96,7 @@ public class nextMenu extends JFrame {
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(206, Short.MAX_VALUE)
-					.addComponent(btnGoBack, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+					//.addComponent(btnGoBack, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnTakeCard, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
 					.addGap(20))
@@ -135,13 +136,12 @@ public class nextMenu extends JFrame {
 					.addComponent(btnCheck)
 					.addPreferredGap(ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnGoBack)
+						//.addComponent(btnGoBack)
 						.addComponent(btnTakeCard)))
 		);
 		contentPane.setLayout(gl_contentPane);
 		actionDeposit();
 		actionCheckBalance();
-		actionTransfer();
 		actionWithdraw();
 		actionCancel();
 	}
@@ -165,15 +165,7 @@ public class nextMenu extends JFrame {
 		});
 	
 	}
-	public void actionTransfer() {
-		btnTransfer.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-							Transfer Transfer=new Transfer();
-							Transfer.setVisible(true); 
-							dispose(); //close this window
-						}
-				});
-		}
+	
 	public void actionWithdraw() {
 		btnWithdraw.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {

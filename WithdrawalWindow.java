@@ -23,9 +23,18 @@ public class WithdrawalWindow extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	JButton btnWithdraw = new JButton("WITHDRAW");	
-	JButton btnNewButton_3 = new JButton("TAKE CARD");
+	JButton btnWithdraw = new JButton("WITHDRAW");
+	JButton btnNewButton_3 = new JButton("CANCEL");
 	JButton btnGoBack = new JButton("GO BACK");
+	JButton button = new JButton("60.00");
+	JButton btnNewButton = new JButton("500.00");
+	JButton btnNewButton_1 = new JButton("200.00");
+	JButton btnNewButton_2 = new JButton("40.00");
+	JButton btnNewButton_4 = new JButton("20.00");
+	JButton btnNewButton_5 = new JButton("100.00");
+	
+	String display=""; //create varible to display value
+	
 	/**
 	 * Launch the application.
 	 */
@@ -60,41 +69,16 @@ public class WithdrawalWindow extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("ATM 24/7 ALL AROUND THE WORLD");
 		
-		JButton btnNewButton = new JButton("500.00");
-		
-		JButton btnNewButton_1 = new JButton("200.00");
-		
-		JButton btnNewButton_2 = new JButton("40.00");
-		
-		JButton btnNewButton_4 = new JButton("20.00");
-		
-		JButton btnNewButton_5 = new JButton("100.00");
-		btnNewButton_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		
 		JLabel lblEnterOtherAmount = new JLabel("ENTER OTHER AMOUNT");
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setBackground(SystemColor.window);
-		
-		JButton button = new JButton("60.00");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		
 		textField = new JTextField();
 		textField.setColumns(10);
 		
 		
 		btnWithdraw.setForeground(SystemColor.controlHighlight);
-		btnWithdraw.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		
 		
 		btnNewButton_3.setForeground(Color.RED);
 		
@@ -186,6 +170,13 @@ public class WithdrawalWindow extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 		actionGoBack();
+		actionCancel();
+		action20();
+		action40();
+		action60();
+		action100();
+		action200();
+		action500();
 	}
 	public void actionGoBack() {
 		btnGoBack.addActionListener(new ActionListener() {
@@ -194,6 +185,105 @@ public class WithdrawalWindow extends JFrame {
 					nextMenu.setVisible(true); 
 					dispose(); 
 			
+			}
+		});
+	}
+	public void actionCancel() {
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				JOptionPane.showMessageDialog(null, "Withdrawal Canceled. Thank you for banking with us!" );
+				dispose(); 
+			}
+		});
+	}
+	
+	public void action20 (){ //method to display 20.00 
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent ae) {
+				display=textField.getText(); //get whatever value already present in text field
+				if (textField.getText().equals("")) {
+					textField.setText("20.00"); //if text field is empty then display 20
+				}else{
+					double display20=Double.parseDouble(display); //else convert string from text field to double 
+					double add20=display20+20.00;  //added 20 to current value
+					String value=String.valueOf(add20); //convert value back to string
+					textField.setText(value); //display string
+				}
+			}
+		});
+	}
+	public void action40 (){ //method to display 40.00 
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent ae) {
+				display=textField.getText(); 
+				if (textField.getText().equals("")) {
+					textField.setText("40.00"); 
+				}else{
+					double display40=Double.parseDouble(display); 
+					double add40=display40+40.00;  
+					String value=String.valueOf(add40); 
+					textField.setText(value); 
+				}
+			}
+		});
+	}
+	public void action60 (){ //method to display 60.00 
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent ae) {
+				display=textField.getText(); 
+				if (textField.getText().equals("")) {
+					textField.setText("60.00"); 
+				}else{
+					double display60=Double.parseDouble(display); 
+					double add60=display60+60.00;  
+					String value=String.valueOf(add60); 
+					textField.setText(value); 
+				}
+			}
+		});
+	}
+	public void action100 (){ //method to display 100.00 
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent ae) {
+				display=textField.getText(); 
+				if (textField.getText().equals("")) {
+					textField.setText("100.00"); 
+				}else{
+					double display100=Double.parseDouble(display); 
+					double add100=display100+100.00;  
+					String value=String.valueOf(add100); 
+					textField.setText(value); 
+				}
+			}
+		});
+	}
+	public void action200 (){ //method to display 200.00 
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent ae) {
+				display=textField.getText(); 
+				if (textField.getText().equals("")) {
+					textField.setText("200.00"); 
+				}else{
+					double display200=Double.parseDouble(display); 
+					double add200=display200+200.00;  
+					String value=String.valueOf(add200); 
+					textField.setText(value); 
+				}
+			}
+		});
+	}
+	public void action500 (){ //method to display 500.00 
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent ae) {
+				display=textField.getText(); 
+				if (textField.getText().equals("")) {
+					textField.setText("500.00"); 
+				}else{
+					double display500=Double.parseDouble(display); 
+					double add500=display500+500.00;  
+					String value=String.valueOf(add500); 
+					textField.setText(value); 
+				}
 			}
 		});
 	}

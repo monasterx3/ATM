@@ -27,8 +27,8 @@ public class nextMenu extends JFrame {
 	JButton btnWithdraw = new JButton("WITHDRAW");	
 	JButton btnCheck = new JButton("CHECK BALANCE");
 	JButton btnDeposit = new JButton("DEPOSIT");
-	JButton btnGoBack = new JButton("GO BACK");
-	JButton btnTakeCard = new JButton("TAKE CARD");
+	//JButton btnGoBack = new JButton("GO BACK"); I dont think this button is needed  
+	JButton btnTakeCard = new JButton("CANCEL");
 	
 	/**
 	 * Launch the application.
@@ -141,6 +141,9 @@ public class nextMenu extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 		actionDeposit();
 		actionCheckBalance();
+		actionTransfer();
+		actionWithdraw();
+		actionCancel();
 	}
 	public void actionDeposit() {
 		btnDeposit.addActionListener(new ActionListener() {
@@ -162,6 +165,15 @@ public class nextMenu extends JFrame {
 		});
 	
 	}
+	public void actionTransfer() {
+		btnTransfer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							Transfer Transfer=new Transfer();
+							Transfer.setVisible(true); 
+							dispose(); //close this window
+						}
+				});
+		}
 	public void actionWithdraw() {
 		btnWithdraw.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
@@ -171,4 +183,12 @@ public class nextMenu extends JFrame {
 			}
 		});
 	}
+	public void actionCancel() {
+		btnTakeCard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+							JOptionPane.showMessageDialog(null, "Account Activity Canceled. Thank you for banking with us!" );
+							dispose(); 
+						}
+				});
+		}
 }

@@ -17,4 +17,11 @@ Project Roles:
 4. Zhiyi Dong (@zydong615): Back end / tester
 5. Ajayi Abdulslam (@shalam15): Database / tester
 
+Atm login Information:
+-Account #:     Pin #:
+-Account #:     Pin #:
+-Account #:     Pin #:
+-Account #:     Pin #:
+
+
 Steps to create a Database connection server using Wammp Server:

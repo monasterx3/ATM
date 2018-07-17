@@ -11,10 +11,10 @@ Project Structure:
 5. Deposit.java, WithdrawalWindow.java, and CheckBalance.java are the various options the user can go through.
 
 Project Roles: 
-Paulyn Monasterio (@Monasterx): GUI, Front end, Documentation
-Jenny Huang (@jhuang15): Front end 
-Alex Petros (@apetros1): Back end / tester
-Zhiyi Dong (@zydong615): Back end / tester
-Ajayi Abdulslam (@shalam15): Database / tester
+1. Paulyn Monasterio (@Monasterx): GUI, Front end, Documentation
+2. Jenny Huang (@jhuang15): Front end 
+3. Alex Petros (@apetros1): Back end / tester
+4. Zhiyi Dong (@zydong615): Back end / tester
+5. Ajayi Abdulslam (@shalam15): Database / tester
 
 Steps to create a Database connection server using Wammp Server:

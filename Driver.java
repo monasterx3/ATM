@@ -1,4 +1,4 @@
-package gui;
+
 import java.sql.*;
 public class Driver {
 	public static TheDataBase dataB = new TheDataBase();
@@ -23,8 +23,8 @@ public class Driver {
 				dataB.getAccountTypeByCardNumb(cardNumb);
 				System.out.println(" ");
 				dataB.getAccountBalanceByCardNumb(cardNumb);
-				dataB.createTempTable("TempTable");
-				dataB.dropTable();
+				
+				
 			}else {
 				System.out.println("NOPE Not Found\n");
 

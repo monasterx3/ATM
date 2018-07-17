@@ -18,10 +18,10 @@ Project Roles:
 5. Ajayi Abdulslam (@shalam15): Database / tester
 
 Atm login Information:
--Account #:     Pin #:
--Account #:     Pin #:
--Account #:     Pin #:
--Account #:     Pin #:
+1. Account #:     Pin #:
+2. Account #:     Pin #:
+3. Account #:     Pin #:
+4. Account #:     Pin #:
 
 
 Steps to create a Database connection server using Wammp Server:

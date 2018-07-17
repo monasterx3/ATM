@@ -1,4 +1,4 @@
-package gui;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -20,16 +20,23 @@ import javax.swing.JButton;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 
 public class ATMFramee extends JFrame {
+	public static TheDataBase dataB = new TheDataBase();
 
 	private JPanel contentPane;
-	private JPasswordField passwordField;
+	
 	JButton btnProceed = new JButton("PROCEED"); 
-	JButton btnNewAccount = new JButton("NEW ACCOUNT");
+	private JTextField textField;
+	public static String cardNumber;
+	
+	
 	/**
 	 * Launch the application.
 	 */
+	
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -50,14 +57,14 @@ public class ATMFramee extends JFrame {
 	public ATMFramee() {
 		setForeground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 520, 400);
 		contentPane = new JPanel();
 		contentPane.setBackground(SystemColor.menu);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("DATA STRUCTURES BANK");
-		lblNewLabel.setForeground(SystemColor.controlHighlight);
+		lblNewLabel.setForeground(SystemColor.blue);
 		lblNewLabel.setFont(new Font("Georgia", Font.BOLD, 26));
 		
 		JLabel lblNewLabel_1 = new JLabel("ATM 24/7 ALL AROUND THE WORLD");
@@ -67,32 +74,31 @@ public class ATMFramee extends JFrame {
 		JLabel label = new JLabel("");
 		
 		JButton btnCard = new JButton("");
-		btnCard.setIcon(new ImageIcon("/Users/apple/eclipse-workspace/ATM/src/gui/card-img.jpeg"));
+		btnCard.setBackground(Color.GRAY);
+		btnCard.setIcon(new ImageIcon("C:\\Users\\diaof\\eclipse-workspace\\Testing\\src\\card-img.jpeg"));
 		btnCard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				PinM pin = new PinM();
+				
 				pin.setVisible(true);
 			}
 		
-		}); 
-		
-		JLabel lblNewLabel_2 = new JLabel("Account #:");
-		lblNewLabel_2.setForeground(SystemColor.controlHighlight);
+		});
 		
 		
-		passwordField = new JPasswordField();
+		JLabel lblNewLabel_2 = new JLabel("ENTER CARD #:");
+		lblNewLabel_2.setForeground(SystemColor.blue);
 		
 		
 		btnProceed.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		btnProceed.setForeground(SystemColor.controlHighlight);
+		btnProceed.setForeground(SystemColor.blue);
 		
-		JLabel lblNewLabel_4 = new JLabel("Create a New Account Now");
-		lblNewLabel_4.setForeground(SystemColor.controlHighlight);
+		textField = new JTextField();
+		textField.setColumns(10);
 		
-		
-		btnNewAccount.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-		btnNewAccount.setForeground(SystemColor.controlHighlight);
+		JButton btnCreateAccount = new JButton("CREATE ACCOUNT");
+		btnCreateAccount.setForeground(Color.RED);
 	
 	
 		
@@ -113,80 +119,79 @@ public class ATMFramee extends JFrame {
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(66)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnCard, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(6)
+									.addComponent(btnCard, GroupLayout.PREFERRED_SIZE, 304, GroupLayout.PREFERRED_SIZE))
 								.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(26)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, 212, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(btnProceed))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(lblNewLabel_4)
-									.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(btnNewAccount, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)))))
-					.addContainerGap())
+							.addGap(27)
+							.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textField, GroupLayout.PREFERRED_SIZE, 224, GroupLayout.PREFERRED_SIZE)))
+					.addGap(99))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(188)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnCreateAccount, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnProceed, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
+					.addGap(349))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
 					.addComponent(lblNewLabel)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_1)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_3)
+					.addGap(12)
+					.addComponent(btnCard)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnCard, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnProceed)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-							.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addComponent(lblNewLabel_2)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(168)
-							.addComponent(label))
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-							.addComponent(lblNewLabel_4)
-							.addComponent(btnNewAccount)))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_2)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addComponent(btnProceed, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnCreateAccount)
+					.addGap(20)
+					.addComponent(label)
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 		actionATMFramee(); //call method
-		actionCreateAcct();
 	}
 	public void actionATMFramee() {
 		btnProceed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
-				String acctnum=passwordField.getText(); //get user input
-					if(acctnum.equals("123")) { //Check if account number entered from user is the same 
+				String acctnum = textField.getText(); //get user input
+				cardNumber=acctnum;// assign user input to the CardNumber
+				
+				
+				
+				if(dataB.checkConnection()) {
+					if(dataB.checkCard(cardNumber)) { //Check if account number entered from user is the same 
+						//System.out.println(dataB.getPinByCardNumb(cardNumber));
 						PinM PinM=new PinM();
 						PinM.setVisible(true); //open next window which is pinM
 						dispose(); //close this window
 					}else {
 						JOptionPane.showMessageDialog(null, "Invalid Account Number");
-						passwordField.setText("");
-						passwordField.requestFocus();
+						textField.setText("");
+						textField.requestFocus();
 					}
+			}else {
+				System.out.println("nope");
 			}
-		});
-	}
-	public void actionCreateAcct(){
-		btnNewAccount.addActionListener( new ActionListener(){
-			public void actionPerformed(ActionEvent ae){
-				NewAcct NewAcct=new NewAcct();
-				NewAcct.setVisible(true);
-				dispose();
+				
+				
+				
 			}
 		});
 	}
 	
+	public static String getCard() {
+		return cardNumber;
+	}
+	
 }
-

@@ -17,11 +17,11 @@ Project Roles:
 4. Zhiyi Dong (@zydong615): Back end / tester
 5. Ajayi Abdulslam (@shalam15): Database / tester
 
-Atm login Information:
-1. Account #:     Pin #:
-2. Account #:     Pin #:
-3. Account #:     Pin #:
-4. Account #:     Pin #:
+Atm default login Information:
+1. Account: Elon Musk Account #: 123908    Pin #: 5678
 
 
-Steps to create a Database connection server using Wammp Server:
+Steps to create a Database connection server using mamp Server:
+1. Download mamp server
+2. Load the information to the mysql database
+3. Have mamp server running to connect the mysql database to the ATM Gui progam
